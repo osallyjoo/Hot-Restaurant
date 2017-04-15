@@ -17,7 +17,7 @@ var reservations = [{
 }]
 //Waitlist
 var waitlist = [{
-	customerName: "test",
+	customerName: "testWaitlist",
 	phoneNumber: "test#",
 	customerEmail: "testEmail",
 	customerID: "testID"
@@ -42,18 +42,30 @@ app.get("/tables", function(req,res){
 });
 
 //API call to get the tables
-app.get("/api/:tables?", function(req,res){
+app.get("/api/reservations", function(req,res){
 	return res.json(reservations);
 });
 
-app.get("/api/:waitlist?", function(req,res){
-	resturn res.json(waitlist);
+app.get("/api/waitlist", function(req,res){
+	return res.json(waitlist);
 });
 
 app.post("/api/new", function(req,res){
 	var newReservation = req.body;
 
-	res.json(newReservation);
+	if(reservations.length<5){
+		reservations.push(newReservation);
+	} else {
+		waitlist.push(newReservation);
+	}
+
+	//res.json(newReservation);
+})
+
+//Delete?????????????????????
+app.delete("api/clear", function(req,res){
+	reservations = [];
+	waitlist = [];
 })
 
 //Listener
