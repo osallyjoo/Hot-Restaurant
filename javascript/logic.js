@@ -15,7 +15,7 @@ var numberWaitlist = 0;
       $.post("/api/reserve", newReservation)
       .done(function(data) {
         console.log(data);
-        alert("Adding Reservartion...");
+        alert("Adding Reservation...");
       });
     });
 
