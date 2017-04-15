@@ -53,7 +53,19 @@ app.get("/api/:waitlist?", function(req,res){
 app.post("/api/new", function(req,res){
 	var newReservation = req.body;
 
-	res.json(newReservation);
+	if(reservations.length<5){
+		reservations.push(newReservation);
+	} else {
+		waitlist.push(newReservation);
+	}
+
+	//res.json(newReservation);
+})
+
+//Delete?????????????????????
+app.delete("api/clear", function(req,res){
+	reservations = [];
+	waitlist = [];
 })
 
 //Listener
