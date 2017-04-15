@@ -1,0 +1,25 @@
+{
+  "name": "hot-restaurant",
+  "version": "1.0.0",
+  "description": "full stack app",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/osallyjoo/Hot-Restaurant.git"
+  },
+  "author": "michael, sally, marco, stephen",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/osallyjoo/Hot-Restaurant/issues"
+  },
+  "homepage": "https://github.com/osallyjoo/Hot-Restaurant#readme",
+  "dependencies": {
+    "body-parser": "^1.17.1",
+    "express": "^4.15.2",
+    "path": "^0.12.7"
+  }
+}
